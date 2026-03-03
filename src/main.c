@@ -19,6 +19,11 @@ void init(void)
     GPIO_Init(DB_LED6_PORT, DB_LED6_PIN, GPIO_MODE_OUT_PP_LOW_SLOW);
     GPIO_Init(DB_LED5_PORT, DB_LED5_PIN, GPIO_MODE_OUT_PP_LOW_SLOW);
     GPIO_Init(DB_S1_PORT, DB_S1_PIN, GPIO_MODE_IN_PU_NO_IT);
+
+    TIM3_TimeBaseInit(TIM3_PRESCALER_128,50000-1);      // nastavení časovače na 400 ms
+    TIM3_Cmd(ENABLE);                                //POVOLÍ/SPUSTÍ TIM 3
+    TIM3_ITConfig(TIM3_IT_UPDATE,ENABLE);             //Událost update UPDATE je zdrojem/způsobí IRQ
+    enableInterrupts();   
 }
 
 
@@ -26,17 +31,28 @@ int main(void)
 {
 
     uint32_t time = 0;
+    uint8_t btn_press = 0;
+    bool led_pointer=0;
 
     init();
+    
+    while(1){
 
-    while (1) {
-        if (milis() - time > 333) {
-            REVERSE(DB_LED6);
-            time = milis();
-            // printf("%ld\n", time);
+        if(milis() - time > 33){
+            if(PUSH(DB_S1) && !btn_press){
+                led_pointer+=1;
+                
+            }
+            
+            btn_press= PUSH(DB_S1);
+            time= milis();
+
         }
-        // delay_ms(333);
-    }
+    };
+
+  
+
+   
 }
 
 /*-------------------------------  Assert -----------------------------------*/

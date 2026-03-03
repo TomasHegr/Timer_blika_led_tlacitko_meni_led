@@ -4,36 +4,30 @@ Timer_blika_led_tlacitko_meni_led project
 Účel/Zadání/Funkce
 -----------------------
 
-* parní mlátička s elektronickým vstřikováním
-    * pára
-    * píst
-    * mikroprocesor
+
+    1. Pomocí 16b TIMERu nastavte půlperiodu blikání LED diody na 400ms.
+    2. Tlačítkem přepínejte mezi dvěma LED, kterými se bliká.
+
+Např.: Bliká LED6. Stisknu tlačítko, bliká LED5. Stisknu tlačítko, bliká LED6. atd. Frekvence blikání je stále stejná a jed dána půlperiodou 400ms (perioda 800ms).
+
 
 
 Schéma zapojení
 -----------------------
 
-![schéma zapojení](./docs/schema.png)
+
 
 Popis funkce
 -----------------------
 
-1. ono se to
-2. samo se to
+1. 
+2. 
 
 ToDo
 -----------------------
 
-* ještě chybí tamto
+
 
 Zhodnocení
 -----------------------
 
-Na tomto projektu jsem se naučíl jedno a druhé a došlo mi jak funguje třetí.
-Zlepšil jsem se v tamtom.
-
-Svou práci bych ohodnotil chvalitebně, protože jsem nepracoval úplně samostatně,
-ale vše jsem implementoval a prozkoumal.
-
-Svou práci bych ohodnotil výborně. Nepracoval jsem sice samostatně,
-ale nakonec jsem hotový projekt smazal a vytvořil ho celý znovu sám.

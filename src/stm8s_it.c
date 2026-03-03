@@ -28,6 +28,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm8s_it.h"
 
+#include "main.h"
+#include "daughterboard.h"
+
 #include "milis.h"
 
 /* Private typedef -----------------------------------------------------------*/
@@ -298,9 +301,10 @@ INTERRUPT_HANDLER(TIM1_CAP_COM_IRQHandler, 12)
   */
  INTERRUPT_HANDLER(TIM3_UPD_OVF_BRK_IRQHandler, 15)
 {
-  /* In order to detect unexpected events during development,
-     it is recommended to set a breakpoint on the following instruction.
-  */
+   TIM3_ClearFlag(TIM3_FLAG_UPDATE);
+
+if(led_pointer == 1)
+  REVERSE(DB_LED6);
 }
 
 /**
