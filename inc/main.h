@@ -10,5 +10,6 @@
 
 // functions
 void init(void);
+extern bool led_pointer;
 
 #endif // !_MAIN_H_

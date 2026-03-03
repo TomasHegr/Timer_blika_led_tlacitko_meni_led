@@ -9,7 +9,7 @@
 
 
 
-
+bool led_pointer=0;
 void init(void)
 {
     CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV1); // taktovani MCU na 16MHz
@@ -32,7 +32,7 @@ int main(void)
 
     uint32_t time = 0;
     uint8_t btn_press = 0;
-    bool led_pointer=0;
+    
 
     init();
     
@@ -40,7 +40,7 @@ int main(void)
 
         if(milis() - time > 33){
             if(PUSH(DB_S1) && !btn_press){
-                led_pointer+=1;
+                led_pointer=!led_pointer;
                 
             }
             
