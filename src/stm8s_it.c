@@ -33,6 +33,8 @@
 
 #include "milis.h"
 
+uint8_t led_pointer1 =0;
+
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
@@ -305,13 +307,22 @@ INTERRUPT_HANDLER(TIM3_UPD_OVF_BRK_IRQHandler, 15)
 {
     TIM3_ClearFlag(TIM3_FLAG_UPDATE);
 
-    if (led_pointer == 1){
-        LOW(DB_LED5);
-        REVERSE(DB_LED6);}
-    else {
-      LOW(DB_LED6);
+    if (led_pointer1 == 0){         //bliká LED5
+        LOW(DB_LED6);
+        LOW(DB_LED4);
         REVERSE(DB_LED5);
     }
+    if (led_pointer1 == 1){         //bliká LED6
+        LOW(DB_LED4);
+        LOW(DB_LED5);
+        REVERSE(DB_LED6);
+    }
+    if (led_pointer1 == 2){     //bliká LED4
+        LOW(DB_LED6);
+        LOW(DB_LED5);
+        REVERSE(DB_LED4);
+    }
+   
 }
 
 /**
