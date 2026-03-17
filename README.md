@@ -23,8 +23,8 @@ Schéma zapojení
 Popis funkce
 -----------------------
 
-1. Timer skáče do rutiny přerušení, každých 400 ms
-2. v rutině přerušení jsou 3 IFy, který každý přepíná jaká led bliká
+1. Timer skáče do rutiny přerušení každých 400 ms, kde vykonává program
+2. V rutině přerušení jsou 3 IFy, který každý přepíná jaká led bliká
 3. Přepínání LED reaguje pouze při náběžné hraně (při stisku tlačítka)
 4. V mainu se proměnná led_pointer1 nastaví na nulu, když je větší jak 2
 
