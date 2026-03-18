@@ -18,11 +18,11 @@ void init(void)
     init_milis();
     // init_uart1();
 
-    GPIO_Init(DB_LED6_PORT, DB_LED6_PIN, GPIO_MODE_OUT_PP_LOW_SLOW);
-    GPIO_Init(DB_LED5_PORT, DB_LED5_PIN, GPIO_MODE_OUT_PP_LOW_SLOW);
-    GPIO_Init(DB_LED4_PORT, DB_LED4_PIN, GPIO_MODE_OUT_PP_LOW_SLOW);
+    GPIO_Init(SB_LED1_PORT, SB_LED1_PIN, GPIO_MODE_OUT_PP_LOW_SLOW);
+    GPIO_Init(SB_LED2_PORT, SB_LED2_PIN, GPIO_MODE_OUT_PP_LOW_SLOW);
+    GPIO_Init(SB_LED3_PORT, SB_LED3_PIN, GPIO_MODE_OUT_PP_LOW_SLOW);
 
-    GPIO_Init(DB_S1_PORT, DB_S1_PIN, GPIO_MODE_IN_PU_NO_IT);
+    GPIO_Init(SB_S4_PORT, SB_S4_PIN, GPIO_MODE_IN_PU_NO_IT);
 
     TIM3_TimeBaseInit(TIM3_PRESCALER_128,50000-1);      // nastavení časovače na 400 ms
     TIM3_Cmd(ENABLE);                                //POVOLÍ/SPUSTÍ TIM 3
@@ -43,7 +43,7 @@ int main(void)
     while(1){
 
         if(milis() - time > 33){
-            if(PUSH(DB_S1) && !btn_press){
+            if(PUSH(SB_S4) && !btn_press){
                 
                 led_pointer1+=1;
                 if(led_pointer1 > 2){
@@ -52,7 +52,7 @@ int main(void)
                 
             }
             
-            btn_press= PUSH(DB_S1);
+            btn_press= PUSH(SB_S4);
             time= milis();
 
         }

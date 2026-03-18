@@ -29,9 +29,9 @@
 // S1, S2 -> FL - Float
 // S3, S4 -> PU - Pull Up
 #define SB_S1_PORT GPIOD
-#define SB_S1_PIN GPIO_PIN_6
+#define SB_S1_PIN GPIO_PIN_5
 #define SB_S2_PORT GPIOD
-#define SB_S2_PIN GPIO_PIN_5
+#define SB_S2_PIN GPIO_PIN_6
 #define SB_S3_PORT GPIOC
 #define SB_S3_PIN GPIO_PIN_1
 #define SB_S4_PORT GPIOC

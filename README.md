@@ -17,24 +17,24 @@ Např.: Bliká LED6. Stisknu tlačítko, bliká LED5. Stisknu tlačítko, bliká
 
 Schéma zapojení
 -----------------------
+![schéma zapojení](./docs/IMG_7066.jpeg)
 
 
 
 Popis funkce
 -----------------------
 
-1. Timer skáče do rutiny přerušení každých 400 ms, kde vykonává program
-2. V rutině přerušení jsou 3 IFy, který každý přepíná jaká led bliká
-3. Přepínání LED reaguje pouze při náběžné hraně (při stisku tlačítka)
-4. V mainu se proměnná led_pointer1 nastaví na nulu, když je větší jak 2
+1. Nastavím TIMER na 400 ms a povolím přerušení, kde se vykonává program
+2. V rutině přerušení jsou 3 IFy, kde každý IF určuje jaká LED má právě blikat
+3. Přepínání LED dělám pomocí proměnné led_pointer1, její hodnota se mění při stisku tlačítka S4, tlačítko reaguje při náběžné hraně 
 
 
 
-ToDo
------------------------
+
 
 
 
 Zhodnocení
 -----------------------
+Projekt jsem zvádnul bez potíží, zjistil jsem, že na mé desce je pravděpodobně chyba a to prohozené piny pro tlačítka S1 a S2 ( když chci pracovat s S1, tak S1 nereaguje a S2 reaguje  a naopak). Tak jsem to vyřešil tak, že jsem v hlavičkovém souboru sonboardu prohodil jen čísla pinů na nucleo a už to funguje jak má. Na tomto projektu jsem si vyzkoušel jak funguje timer a jak funguje vyrobená deska z praxí Sonboard. Svou práci hodnotím za 1.
 
