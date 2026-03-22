@@ -17,7 +17,7 @@ Např.: Bliká LED6. Stisknu tlačítko, bliká LED5. Stisknu tlačítko, bliká
 
 Schéma zapojení
 -----------------------
-![schéma zapojení](./docs/IMG_7066.jpeg)
+![schéma zapojení](./docs/IMG_7077.jpeg)
 
 
 

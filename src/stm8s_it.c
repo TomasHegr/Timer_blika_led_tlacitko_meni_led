@@ -307,20 +307,20 @@ INTERRUPT_HANDLER(TIM3_UPD_OVF_BRK_IRQHandler, 15)
 {
     TIM3_ClearFlag(TIM3_FLAG_UPDATE);
 
-    if (led_pointer1 == 0){         //bliká LED3
-        HIGH(SB_LED1);
-        HIGH(SB_LED2);
-        REVERSE(SB_LED3);
-    }
-    if (led_pointer1 == 1){         //bliká LED1
-        HIGH(SB_LED2);
+    if (led_pointer1 == 0){         //bliká LED1
         HIGH(SB_LED3);
+        HIGH(SB_LED2);
         REVERSE(SB_LED1);
     }
-    if (led_pointer1 == 2){     //bliká LED2
-        HIGH(SB_LED3);
+    if (led_pointer1 == 1){         //bliká LED2
         HIGH(SB_LED1);
+        HIGH(SB_LED3);
         REVERSE(SB_LED2);
+    }
+    if (led_pointer1 == 2){     //bliká LED3
+        HIGH(SB_LED2);
+        HIGH(SB_LED1);
+        REVERSE(SB_LED3);
     }
    
 }
